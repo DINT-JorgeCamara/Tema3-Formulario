@@ -1,0 +1,78 @@
+﻿<Window x:Class="Tema3_Formulario.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema3_Formulario"
+        mc:Ignorable="d"
+        Title="Formulario" Height="550" Width="850" MinHeight="550" MinWidth="850" Icon="Recursos/form.ico">
+    <DockPanel>
+        <TextBlock HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" DockPanel.Dock="Top">Formulario</TextBlock>
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" Margin="5">
+                <TextBlock HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" DockPanel.Dock="Left">Jorge Cámara</TextBlock>
+            <WrapPanel DockPanel.Dock="Right">
+                 <Button HorizontalAlignment="Right" Margin="5" Width="70">Aceptar</Button>
+                 <Button HorizontalAlignment="Right" Margin="5" Width="70">Cancelar</Button>
+            </WrapPanel>
+        </DockPanel>
+        <Grid ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0" BorderBrush="Black" Margin="10" BorderThickness="3" CornerRadius="5" VerticalAlignment="Top"  Background="#FF68B5F7" Height="100">
+                <Border.Effect>
+                        <DropShadowEffect/>
+                    </Border.Effect>
+                <StackPanel Margin="5">
+                    <DockPanel>
+                        <TextBlock Margin="5" DockPanel.Dock="Left">Nombre</TextBlock>
+                        <Image Tag="nombre" Source="Recursos/informacion.ico" DockPanel.Dock="Right" Margin="5" Height="15" Width="15" IsMouseDirectlyOverChanged="RatonEncima"></Image>
+                        <TextBox Margin="10,5,0,0"></TextBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock Margin="5" DockPanel.Dock="Left">Edad</TextBlock>
+                        <Image Tag="edad"  Source="Recursos/informacion.ico" DockPanel.Dock="Right" Margin="5" Height="15" Width="15" IsMouseDirectlyOverChanged="RatonEncima"></Image>
+                        <TextBox Margin="28,5,0,0"></TextBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock Margin="5" DockPanel.Dock="Left">Dirección</TextBlock>
+                        <Image Tag="Direccion" Source="Recursos/informacion.ico" DockPanel.Dock="Right" Margin="5" Height="15" Width="15" IsMouseDirectlyOverChanged="RatonEncima"></Image>
+                        <TextBox Margin="4,5,0,0"></TextBox>
+                    </DockPanel>
+                </StackPanel>
+                <!-- Esto se podría haber hecho con un grid (más fácil)-->
+            </Border>
+            <Border Grid.Row="1" BorderBrush="Black" Margin="10" BorderThickness="3" CornerRadius="5" VerticalAlignment="Top" Background="#FFF8FFB0" Height="130">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <WrapPanel>
+                    <GroupBox Header="Aficiones" Width="175" Margin="10,10,40,10">
+                        <StackPanel>
+                            <CheckBox>Hacer deporte</CheckBox>
+                            <CheckBox>Viajar</CheckBox>
+                            <CheckBox>Ver Series</CheckBox>
+                            <CheckBox>Leer comics</CheckBox>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Estado civil" Width="175" Margin="10,10,40,10">
+                        <StackPanel>
+                            <RadioButton GroupName="EstadoCivil" IsChecked="True">Soltero</RadioButton>
+                            <RadioButton GroupName="EstadoCivil">Casado</RadioButton>
+                            <RadioButton GroupName="EstadoCivil">Divorciado</RadioButton>
+                            <RadioButton GroupName="EstadoCivil">Viudo</RadioButton>
+                        </StackPanel>
+                    </GroupBox>
+                </WrapPanel>
+            </Border>
+            <Image Grid.Column="1" Grid.RowSpan="3" Source="Recursos/foto.jpg" DockPanel.Dock="Right" Stretch="Fill" Margin="10"></Image>
+        </Grid>
+    </DockPanel>
+</Window>

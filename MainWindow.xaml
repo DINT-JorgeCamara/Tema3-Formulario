@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:Tema3_Formulario"
         mc:Ignorable="d"
         Title="Formulario" Height="550" Width="850" MinHeight="550" MinWidth="850" Icon="Recursos/form.ico">
+
     <DockPanel>
         <TextBlock HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" DockPanel.Dock="Top">Formulario</TextBlock>
         <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" Margin="5">
                 <TextBlock HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" DockPanel.Dock="Left">Jorge Cámara</TextBlock>
             <WrapPanel DockPanel.Dock="Right">
-                 <Button HorizontalAlignment="Right" Margin="5" Width="70">Aceptar</Button>
-                 <Button HorizontalAlignment="Right" Margin="5" Width="70">Cancelar</Button>
+                 <Button>Aceptar</Button>
+                 <Button>Cancelar</Button>
             </WrapPanel>
         </DockPanel>
         <Grid ShowGridLines="True">
@@ -26,35 +27,30 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Row="0" BorderBrush="Black" Margin="10" BorderThickness="3" CornerRadius="5" VerticalAlignment="Top"  Background="#FF68B5F7" Height="100">
-                <Border.Effect>
-                        <DropShadowEffect/>
-                    </Border.Effect>
+            <Border Grid.Row="0" Style="{StaticResource bordesFormularios}" Background="#FF68B5F7" Height="100">
+                
                 <StackPanel Margin="5">
                     <DockPanel>
                         <TextBlock Margin="5" DockPanel.Dock="Left">Nombre</TextBlock>
-                        <Image Tag="nombre" Source="Recursos/informacion.ico" DockPanel.Dock="Right" Margin="5" Height="15" Width="15" IsMouseDirectlyOverChanged="RatonEncima"></Image>
+                        <Image Tag="nombre" Style="{StaticResource Iconos}" ToolTip="Máximo 100 caracteres"></Image>
                         <TextBox Margin="10,5,0,0"></TextBox>
                     </DockPanel>
                     <DockPanel>
                         <TextBlock Margin="5" DockPanel.Dock="Left">Edad</TextBlock>
-                        <Image Tag="edad"  Source="Recursos/informacion.ico" DockPanel.Dock="Right" Margin="5" Height="15" Width="15" IsMouseDirectlyOverChanged="RatonEncima"></Image>
+                        <Image Tag="edad" Style="{StaticResource Iconos}" ToolTip="Número entre 0 y 100"></Image>
                         <TextBox Margin="28,5,0,0"></TextBox>
                     </DockPanel>
                     <DockPanel>
                         <TextBlock Margin="5" DockPanel.Dock="Left">Dirección</TextBlock>
-                        <Image Tag="Direccion" Source="Recursos/informacion.ico" DockPanel.Dock="Right" Margin="5" Height="15" Width="15" IsMouseDirectlyOverChanged="RatonEncima"></Image>
+                        <Image Tag="Direccion" Style="{StaticResource Iconos}" ToolTip="Incluir código postal" ></Image>
                         <TextBox Margin="4,5,0,0"></TextBox>
                     </DockPanel>
                 </StackPanel>
                 <!-- Esto se podría haber hecho con un grid (más fácil)-->
             </Border>
-            <Border Grid.Row="1" BorderBrush="Black" Margin="10" BorderThickness="3" CornerRadius="5" VerticalAlignment="Top" Background="#FFF8FFB0" Height="130">
-                <Border.Effect>
-                    <DropShadowEffect/>
-                </Border.Effect>
+            <Border Grid.Row="1" Style="{StaticResource bordesFormularios}" Background="#FFF8FFB0" Height="130">
                 <WrapPanel>
-                    <GroupBox Header="Aficiones" Width="175" Margin="10,10,40,10">
+                    <GroupBox Header="Aficiones">
                         <StackPanel>
                             <CheckBox>Hacer deporte</CheckBox>
                             <CheckBox>Viajar</CheckBox>
@@ -62,7 +58,7 @@
                             <CheckBox>Leer comics</CheckBox>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Header="Estado civil" Width="175" Margin="10,10,40,10">
+                <GroupBox Header="Estado civil">
                         <StackPanel>
                             <RadioButton GroupName="EstadoCivil" IsChecked="True">Soltero</RadioButton>
                             <RadioButton GroupName="EstadoCivil">Casado</RadioButton>

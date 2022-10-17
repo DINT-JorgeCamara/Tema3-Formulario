@@ -24,22 +24,5 @@ namespace Tema3_Formulario
         {
             InitializeComponent();
         }
-
-        private void RatonEncima(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            Image info = (Image)sender;
-            if(info.Tag.ToString() == "nombre")
-            {
-                info.ToolTip = "Máximo 100 caracteres";
-            }
-            else if(info.Tag.ToString() == "edad")
-            {
-                info.ToolTip = "Número entre 0 y 100";
-            }
-            else
-            {
-                info.ToolTip = "Incluir el código postal";
-            }
-        }
     }
 }
